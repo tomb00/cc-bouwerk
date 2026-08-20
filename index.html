@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Het bouwwerk — competentiecentra UPC KU Leuven</title>
+<style>
+:root{
+  --paper:#FBFAF7; --ink:#14161A; --soft:#6B6F76; --hair:#DCD8D1;
+  --c1:#16233F; --c2:#24365A; --c3:#365075; --c4:#4E6C93; --c5:#7A94B5;
+  --acc:#B5502A;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--paper);color:var(--ink)}
+body{font:16px/1.62 "Iowan Old Style",Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
+.sans{font-family:"Helvetica Neue",Arial,system-ui,sans-serif}
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px 90px}
+
+header{padding:56px 0 26px;border-bottom:1px solid var(--hair);display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+h1{font-size:40px;line-height:1.08;margin:0;font-weight:400;letter-spacing:-.3px}
+h1 em{font-style:italic;color:var(--acc)}
+.stand{margin:10px 0 0;color:var(--soft);font-size:17px;max-width:52ch}
+nav{display:flex;gap:26px;padding-bottom:4px}
+nav button{background:none;border:0;padding:0 0 4px;font:inherit;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  font-family:"Helvetica Neue",Arial,sans-serif;color:var(--soft);cursor:pointer;border-bottom:1px solid transparent}
+nav button:hover{color:var(--ink)}
+nav button[aria-current="true"]{color:var(--ink);border-bottom-color:var(--acc)}
+
+.grid{display:grid;grid-template-columns:minmax(420px,1fr) minmax(340px,.92fr);gap:56px;padding-top:44px;align-items:start}
+@media(max-width:980px){.grid{grid-template-columns:1fr;gap:34px}}
+
+svg{width:100%;height:auto;display:block;overflow:visible}
+.band{cursor:pointer}
+.band:hover{filter:brightness(1.1)}
+.sel{fill:none;stroke:var(--acc);stroke-width:1.3;pointer-events:none;opacity:0;transition:opacity .3s}
+.sel.on{opacity:1}
+.rlabel{font-family:"Helvetica Neue",Arial,sans-serif;font-size:13.5px;letter-spacing:.24em;text-transform:uppercase;pointer-events:none;transition:opacity .28s}
+.rnum{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.2em;pointer-events:none}
+.corelab{font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.24em;text-transform:uppercase;pointer-events:none}
+.cap{font-style:italic;fill:var(--acc);font-size:15px}
+
+.panel{border-top:2px solid var(--ink);padding-top:20px;min-height:520px}
+.kick{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin:0 0 8px}
+.panel h2{font-size:29px;line-height:1.16;margin:0 0 12px;font-weight:400}
+.lede{color:#3B3F45;margin:0 0 26px;font-size:17px}
+.grp{margin:0 0 22px}
+.gh{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  padding-bottom:6px;border-bottom:1px solid var(--hair);margin:0 0 8px;display:flex;justify-content:space-between}
+ul{list-style:none;margin:0;padding:0}
+li{padding:5px 0;display:flex;gap:14px;align-items:baseline}
+li .loc{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11.5px;color:var(--soft);white-space:nowrap;min-width:74px;letter-spacing:.04em}
+li .txt{font-size:16px}
+.jump{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px;padding-top:16px;border-top:1px solid var(--hair)}
+.jump button{background:none;border:1px solid var(--hair);padding:6px 12px;font:inherit;font-size:13.5px;cursor:pointer;color:var(--soft)}
+.jump button:hover{border-color:var(--ink);color:var(--ink)}
+.jump i{width:9px;height:9px;display:inline-block;margin-right:8px;border-radius:50%}
+
+table{width:100%;border-collapse:collapse}
+th{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);
+  text-align:left;padding:0 14px 9px 0;border-bottom:1px solid var(--ink);font-weight:400}
+td{padding:14px 14px 14px 0;border-bottom:1px solid var(--hair);vertical-align:top;font-size:16px}
+td .m{color:var(--soft);font-size:14.5px}
+.state{font-family:"Helvetica Neue",Arial,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.state.open{color:var(--acc)}
+.state.done{color:#3E6B4E}
+.state.arch{color:#A6A29B}
+.hidden{display:none}
+.foot{margin-top:46px;padding-top:14px;border-top:1px solid var(--hair);font-size:13px;color:#A6A29B;
+  font-family:"Helvetica Neue",Arial,sans-serif;letter-spacing:.04em}
+.intro{max-width:70ch;color:#3B3F45;margin:38px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div>
+    <h1>Het bouwwerk<br><em>vijf ringen rond één bestaansreden</em></h1>
+    <p class="stand">Dossier competentiecentra · UPC KU Leuven</p>
+  </div>
+  <nav>
+    <button data-v="ring" aria-current="true">Het bouwwerk</button>
+    <button data-v="doc" aria-current="false">Documenten</button>
+    <button data-v="bes" aria-current="false">Wat openstaat</button>
+  </nav>
+</header>
+
+<!-- ============================ RINGEN ============================ -->
+<section id="v-ring">
+<div class="grid">
+  <div>
+    <svg viewBox="0 0 820 866" role="img" aria-label="Vijf concentrische ringen rond de bestaansreden">
+      <defs>
+        <marker id="tip" markerWidth="12" markerHeight="12" refX="7" refY="4" orient="auto">
+          <path d="M0,0 L8,4 L0,8 z" fill="#B5502A"/>
+        </marker>
+        <path id="a2" d="M 272,410 A 138,138 0 0 1 548,410"/>
+        <path id="a3" d="M 204,410 A 206,206 0 0 1 616,410"/>
+        <path id="a4" d="M 136,410 A 274,274 0 0 1 684,410"/>
+        <path id="a5" d="M 68,410  A 342,342 0 0 1 752,410"/>
+      </defs>
+
+      <g id="rings">
+        <circle class="band" data-r="5" cx="410" cy="410" r="342" fill="none" stroke="var(--c5)" stroke-width="65"/>
+        <circle class="band" data-r="4" cx="410" cy="410" r="274" fill="none" stroke="var(--c4)" stroke-width="65"/>
+        <circle class="band" data-r="3" cx="410" cy="410" r="206" fill="none" stroke="var(--c3)" stroke-width="65"/>
+        <circle class="band" data-r="2" cx="410" cy="410" r="138" fill="none" stroke="var(--c2)" stroke-width="65"/>
+        <circle class="band" data-r="1" cx="410" cy="410" r="103" fill="var(--c1)" stroke="none"/>
+      </g>
+
+      <!-- kanaal van de praktijk -->
+      <rect x="397" y="512" width="26" height="300" fill="var(--paper)"/>
+      <line x1="410" y1="800" x2="410" y2="522" stroke="var(--acc)" stroke-width="2" marker-end="url(#tip)"/>
+      <circle class="sel" id="s1" cx="410" cy="410" r="103"/>
+      <circle class="sel" id="s2a" cx="410" cy="410" r="105.5"/><circle class="sel" id="s2b" cx="410" cy="410" r="170.5"/>
+      <circle class="sel" id="s3a" cx="410" cy="410" r="173.5"/><circle class="sel" id="s3b" cx="410" cy="410" r="238.5"/>
+      <circle class="sel" id="s4a" cx="410" cy="410" r="241.5"/><circle class="sel" id="s4b" cx="410" cy="410" r="306.5"/>
+      <circle class="sel" id="s5a" cx="410" cy="410" r="309.5"/><circle class="sel" id="s5b" cx="410" cy="410" r="374.5"/>
+      <text class="cap" x="410" y="842" text-anchor="middle">de praktijk herijkt de bestaansreden</text>
+
+      <!-- ringlabels -->
+      <text class="rlabel" fill="#fff"><textPath href="#a2" startOffset="50%" text-anchor="middle">Identiteit</textPath></text>
+      <text class="rlabel" fill="#fff"><textPath href="#a3" startOffset="50%" text-anchor="middle">Ontwerp</textPath></text>
+      <text class="rlabel" fill="#fff"><textPath href="#a4" startOffset="50%" text-anchor="middle">Maturiteit</textPath></text>
+      <text class="rlabel" fill="#fff"><textPath href="#a5" startOffset="50%" text-anchor="middle">Praktijk</textPath></text>
+
+      <text class="corelab" x="410" y="398" text-anchor="middle" fill="#fff" font-size="15">Finaliteit</text>
+      <text class="rnum" x="410" y="430" text-anchor="middle" fill="#9FB0CC" font-size="12">waartoe bestaan we</text>
+    </svg>
+    <p class="intro">Elke ring omsluit de vorige. Een organisatievorm die haar identiteit niet kent, en een identiteit die haar bestaansreden kwijt is, houden geen van beide stand. Klik een ring.</p>
+  </div>
+
+  <div class="panel" id="panel"></div>
+</div>
+</section>
+
+<!-- ============================ DOCUMENTEN ============================ -->
+<section id="v-doc" class="hidden" style="padding-top:44px">
+  <table>
+    <thead><tr><th style="width:34%">Document</th><th style="width:14%">Ringen</th><th style="width:34%">Waarvoor het dient</th><th style="width:18%">Stand</th></tr></thead>
+    <tbody id="docs"></tbody>
+  </table>
+  <p class="intro">Eén document draagt het geheel; de andere verdiepen één ring. Wat geen ring bedient, hoort niet in het dossier.</p>
+</section>
+
+<!-- ============================ OPEN ============================ -->
+<section id="v-bes" class="hidden" style="padding-top:44px">
+  <table>
+    <thead><tr><th style="width:32%">Vraag</th><th style="width:12%">Ring</th><th style="width:38%">Waarom ze het bouwwerk raakt</th><th style="width:18%">Wanneer</th></tr></thead>
+    <tbody id="bes"></tbody>
+  </table>
+  <p class="intro">Zolang deze vragen openstaan, spreken de documenten die ze veronderstellen elkaar tegen. Daar komt het gevoel van onsamenhangendheid vandaan, en niet uit de volgorde van de hoofdstukken.</p>
+</section>
+
+<p class="foot">Tom Braes · directeur patiëntenzorg en aandachtsdirecteur competentiecentra · augustus 2026</p>
+</div>
+
+<script>
+const C=["","var(--c1)","var(--c2)","var(--c3)","var(--c4)","var(--c5)"];
+const R={
+1:{n:"Ring I",t:"Waartoe bestaan we?",k:"Finaliteit",
+ l:"De bestaansreden gaat vóór de middelen. Zodra die vraag uit beeld raakt, gaat een vakgroep haar middelen verdedigen — en dat leest van buitenaf als protectionisme.",
+ g:[["Visienota",[["deel 9","Waarom een competentiecentrum bestaat: het argument dat we zelden maken"],["deel 9","Middelen en bestaansreden"]]],
+    ["De paden van Maren",[["2.1","Waartoe een competentiecentrum bestaat"],["2.5","Middelen en bestaansreden"],["6","Gespreksvorm C — middelen en bestaansreden"],["6.1","De voorspelbare valstrik"]]]],
+ z:[2,5]},
+2:{n:"Ring II",t:"Wie zijn we, en waar liggen onze grenzen?",k:"Identiteit",
+ l:"Grenzen maken een vakgebied herkenbaar en gesloten tegelijk. Deze ring maakt dat bespreekbaar zonder het als onwil te benoemen.",
+ g:[["Visienota",[["deel 9","Hoe professionele identiteit werkt"],["deel 9","Reflectie in ordes"],["deel 9","Het immuunsysteem"]]],
+    ["De paden van Maren",[["2.2","Hoe identiteit grenzen produceert"],["2.3","De paden"],["2.4","Twee ordes van reflectie"],["3","Diagnose: hoe tolerant is het immuunsysteem?"],["3.1","De omgekeerde diagnose"],["4","Gespreksvorm A — de tractor en het pad"],["5","Gespreksvorm B — één vreemde vraag"],["7","Handleiding voor de gespreksleider"]]]],
+ z:[1,3]},
+3:{n:"Ring III",t:"Welke organisatievorm draagt die identiteit?",k:"Ontwerp",
+ l:"Hier vallen de keuzes: hoe de matrix bedoeld is, wie lid is, en wat een centrum mag beslissen. Dit is de ring waarin de twee assen elkaar kruisen.",
+ g:[["Visienota",[["deel 1","De matrix als ontwerpkeuze"],["deel 1","Vier breuklijnen in één systeem"],["deel 1","De gulden snede van de matrixorganisatie"],["deel 2","Een organisatie in traditie én transitie"],["deel 8","De holarchische logica"],["deel 8","Een gelaagd model met twee vormen"],["deel 10","Competentiecentra als commons"],["deel 10","Zeven kerncomponenten van een werkbare governance-architectuur"]]],
+    ["Wat is een competentiecentrum?",[["2","De huidige definitie, gelezen"],["3","Vier scenario's, A tot D"],["4","De twee assen achter de scenario's"],["5","Waar deze vormen elders voorkomen"],["6","Vier vragen die de dialoog moet beslechten"]]]],
+ z:[2,4]},
+4:{n:"Ring IV",t:"Hoe groeien we daarin?",k:"Maturiteit",
+ l:"Vier dimensies om een centrum te situeren, en daarna de vraag welke maturiteit het nastreeft. Er is geen uniforme eindbestemming.",
+ g:[["Visienota",[["deel 3","Waarom een maturiteitslens"],["deel 4","Besluitvormingscapaciteit"],["deel 4","Capaciteitstoewijzing en prioritering"],["deel 4","Professionele autoriteit en expertisepositie"],["deel 4","Governance en verantwoording"],["deel 5","Innovatie is geen aparte dimensie"],["deel 6","Geen uniforme eindbestemming"],["deel 6","Maturiteit als strategische positionering"]]]],
+ z:[3,5]},
+5:{n:"Ring V",t:"Wat er tussen professionals circuleert",k:"Praktijk",
+ l:"De buitenste ring raakt de wereld. Wat hier gebeurt, toetst elke ring naar binnen toe — tot aan de bestaansreden in het midden.",
+ g:[["Visienota",[["deel 7","De praktijken van een florerende kennisgemeenschap"],["deel 7","Vijf ontwerpprincipes"],["deel 7","De CoP-scan als dialooginstrument"],["deel 11","Werkagenda: zes sporen, A tot F"]]],
+    ["Wat is een competentiecentrum?",[["7","Werkblok voor het atelier van 8 oktober"]]]],
+ z:[4,1]}
+};
+const DOCS=[
+ ["Your mind makes it real","visienota competentiecentra, werkversie 18 augustus 2026","I · II · III · IV · V","Draagt het volledige bouwwerk. Elf delen, van diagnose tot werkagenda.","In bewerking","done"],
+ ["De paden van Maren","werkdossier identiteit en finaliteit","I · II","Verdiept de kern en de tweede ring. Drie gespreksvormen en een handleiding.","Klaar","done"],
+ ["Wat is een competentiecentrum?","dialoogdossier, variant B","III · V","Verdiept de derde ring. Vier scenario's, de plotkaart, zeven vormen elders.","Klaar voor 8 oktober","done"],
+ ["Kernteams en coördinatoren","samen leiden, helder mandaat — 11 december 2025","III","Legt het instructierecht vast in drie toepassingen en vier domeinen.","Geschreven","done"],
+ ["DC-covernota kernteams en competentiecentra","12 februari 2025","III","Vacaturehouderschap, talentcoaching, loopbaangesprekken.","Goedgekeurd","done"],
+ ["Sturing van de organisatie en ploegopstelling","7 maart 2023","—","Vertrekpunt van de ontwikkelingslijn. De vragen zijn elders beantwoord.","Vervangen","arch"]
+];
+const BES=[
+ ["Is een competentiecentrum een beroepsgroep of een vakgebied?","III","De kernteamnota leidt de samenstelling af uit de beroepsgroepen; het dialoogdossier redeneert vanuit het vakgebied. De expertisezoeker werkt alleen bij het tweede.","Op 8 oktober"],
+ ["Krijgt de horizontale as een eigen adres bij een geschil?","III · IV","Elk geschil op het kruispunt eindigt nu bij een orgaan uit de verticale lijn. Zeggenschap die bij de eerste toets wordt ingetrokken, bestaat niet.","Volgende versie kernteamnota"],
+ ["Welke middelen horen bij het mandaat?","IV","Tien procent vrijstelling voor het derde kernteamlid, veertig uur ontwikkeltijd per VTE — en geen enkel getal voor de rol van CC-verantwoordelijke.","Begrotingsronde"],
+ ["Waar hangen de stuurgroepen vandaag?","IV","Sinds 2023 het vierde structuurelement, in geen enkel recenter stuk hernomen.","Vóór de kennisname"],
+ ["Welke maturiteit streeft elk centrum na?","IV · V","Zonder keuze per centrum blijft het maturiteitsmodel een beschrijving in plaats van een opdracht.","Na 8 oktober"]
+];
+
+const bands=[...document.querySelectorAll('.band')];
+function draw(id){
+  document.querySelectorAll('.sel').forEach(e=>e.classList.remove('on'));
+  ({'1':['s1'],'2':['s2a','s2b'],'3':['s3a','s3b'],'4':['s4a','s4b'],'5':['s5a','s5b']})[id]
+    .forEach(k=>document.getElementById(k).classList.add('on'));
+  const r=R[id]; const p=document.getElementById('panel');
+  let h='<p class="kick">'+r.n+' &nbsp;·&nbsp; '+r.k+'</p><h2>'+r.t+'</h2><p class="lede">'+r.l+'</p>';
+  r.g.forEach(g=>{
+    h+='<div class="grp"><p class="gh"><span>'+g[0]+'</span><span>'+g[1].length+'</span></p><ul>';
+    g[1].forEach(it=>h+='<li><span class="loc">'+it[0]+'</span><span class="txt">'+it[1]+'</span></li>');
+    h+='</ul></div>';
+  });
+  h+='<div class="jump">';
+  r.z.forEach(z=>h+='<button data-go="'+z+'"><i style="background:'+C[z]+'"></i>'+R[z].k+'</button>');
+  h+='</div>';
+  p.innerHTML=h;
+  p.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>draw(b.dataset.go));
+}
+bands.forEach(b=>b.onclick=()=>draw(b.dataset.r));
+draw(1);
+
+document.getElementById('docs').innerHTML=DOCS.map(d=>
+ '<tr><td><strong style="font-weight:600">'+d[0]+'</strong><div class="m">'+d[1]+'</div></td><td>'+d[2]+'</td><td>'+d[3]+'</td><td><span class="state '+d[5]+'">'+d[4]+'</span></td></tr>').join('');
+document.getElementById('bes').innerHTML=BES.map(b=>
+ '<tr><td>'+b[0]+'</td><td>'+b[1]+'</td><td class="m">'+b[2]+'</td><td><span class="state open">'+b[3]+'</span></td></tr>').join('');
+
+const V={ring:'v-ring',doc:'v-doc',bes:'v-bes'};
+document.querySelectorAll('nav button').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-current', x===t?'true':'false'));
+  Object.entries(V).forEach(([k,id])=>document.getElementById(id).classList.toggle('hidden',k!==t.dataset.v));
+});
+</script>
+</body>
+</html>
